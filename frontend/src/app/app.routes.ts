@@ -1,0 +1,21 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'pacientes',
+    pathMatch: 'full',
+  },
+  {
+    path: 'pacientes',
+    loadChildren: () =>
+      import('./features/pacientes/pacientes.routes').then(
+        (m) => m.PACIENTES_ROUTES,
+      ),
+  },
+  {
+    path: 'exames',
+    loadChildren: () =>
+      import('./features/exames/exames.routes').then((m) => m.EXAMES_ROUTES),
+  },
+];
