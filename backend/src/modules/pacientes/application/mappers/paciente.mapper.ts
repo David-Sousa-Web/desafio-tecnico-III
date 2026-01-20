@@ -8,13 +8,28 @@ export class PacienteMapper {
   }
 
   static toResponse(entity: Paciente): PacienteResponseDto {
+    const dataNascimento =
+      entity.dataNascimento instanceof Date
+        ? entity.dataNascimento.toISOString().split('T')[0]
+        : String(entity.dataNascimento);
+
+    const createdAt =
+      entity.createdAt instanceof Date
+        ? entity.createdAt.toISOString()
+        : String(entity.createdAt);
+
+    const updatedAt =
+      entity.updatedAt instanceof Date
+        ? entity.updatedAt.toISOString()
+        : String(entity.updatedAt);
+
     return {
       id: entity.id,
       nome: entity.nome,
-      dataNascimento: entity.dataNascimento.toISOString().split('T')[0],
+      dataNascimento,
       documento: entity.documento,
-      createdAt: entity.createdAt.toISOString(),
-      updatedAt: entity.updatedAt.toISOString(),
+      createdAt,
+      updatedAt,
     };
   }
 }

@@ -13,14 +13,29 @@ export class ExameMapper {
   }
 
   static toResponse(entity: Exame): ExameResponseDto {
+    const dataExame =
+      entity.dataExame instanceof Date
+        ? entity.dataExame.toISOString().split('T')[0]
+        : String(entity.dataExame);
+
+    const createdAt =
+      entity.createdAt instanceof Date
+        ? entity.createdAt.toISOString()
+        : String(entity.createdAt);
+
+    const updatedAt =
+      entity.updatedAt instanceof Date
+        ? entity.updatedAt.toISOString()
+        : String(entity.updatedAt);
+
     return {
       id: entity.id,
       pacienteId: entity.pacienteId,
       modalidade: entity.modalidade,
-      dataExame: entity.dataExame.toISOString().split('T')[0],
+      dataExame,
       idempotencyKey: entity.idempotencyKey,
-      createdAt: entity.createdAt.toISOString(),
-      updatedAt: entity.updatedAt.toISOString(),
+      createdAt,
+      updatedAt,
     };
   }
 }
