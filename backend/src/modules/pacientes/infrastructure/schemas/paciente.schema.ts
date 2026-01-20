@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  Index,
 } from 'typeorm';
 
 @Entity('pacientes')
@@ -18,7 +17,6 @@ export class PacienteSchema {
   @Column({ type: 'date', name: 'data_nascimento' })
   dataNascimento: Date;
 
-  @Index({ unique: true })
   @Column({ type: 'varchar', length: 20, unique: true })
   documento: string;
 

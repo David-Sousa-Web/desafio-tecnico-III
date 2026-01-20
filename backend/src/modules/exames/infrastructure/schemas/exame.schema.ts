@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  Index,
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
@@ -29,7 +28,6 @@ export class ExameSchema {
   @Column({ type: 'date', name: 'data_exame' })
   dataExame: Date;
 
-  @Index({ unique: true })
   @Column({ type: 'varchar', length: 255, unique: true, name: 'idempotency_key' })
   idempotencyKey: string;
 
