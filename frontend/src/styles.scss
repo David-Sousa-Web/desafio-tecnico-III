@@ -1,0 +1,117 @@
+@import "primeicons/primeicons.css";
+
+:root {
+  --medical-green: #059669;
+  --medical-green-light: #10b981;
+  --medical-green-dark: #047857;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.875rem;
+  }
+
+  small.error {
+    color: #dc2626;
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.813rem;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+
+  i {
+    font-size: 3rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #64748b;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.p-datatable {
+  .p-datatable-thead > tr > th {
+    background: #f1f5f9 !important;
+    color: #334155 !important;
+    font-weight: 600;
+  }
+}
+
+.p-dialog {
+  .p-dialog-header {
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+.p-tag {
+  font-weight: 600;
+}
